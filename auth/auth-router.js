@@ -26,9 +26,10 @@ router.post('/login', async (req, res) => {
         const user = await Users.findBy({ username }).first();
         if (user && bcrypt.compareSync(password, user.password)) {
             req.session.user = user;
-            res.status(200).json({ message: `Welcome ${user.username}!`, });
+            res.status(200).json({ id: user.id, message: 'Howdy!'})
+            //res.status(200).json({ message: `Howdy ${user.username}!`, });
         } else {
-           res.status(401).json({ message: 'invalid credentials' });
+           res.status(401).json({ message: 'Um, no.' });
         }
     } catch (err) {
         res.status(500).json(error);

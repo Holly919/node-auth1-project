@@ -25,8 +25,8 @@ const authRouter = require("../auth/auth-router.js");
 const server = express();
 
 const sessionConfig = {
-    name: 'sksession',
-    secret: 'myspeshulsecret',
+    name: 'hjsession',
+    secret: 'jeffgoldblumissexy',
     cookie: {
       maxAge: 1000 * 60 * 60,
       secure: false, // should be true in production
